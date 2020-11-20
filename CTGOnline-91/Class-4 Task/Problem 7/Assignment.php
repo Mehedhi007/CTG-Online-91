@@ -31,20 +31,17 @@
 
 			public function wordLength(){
 
+				$Length = 100;
 				$array = explode(' ',$this->sentence);
+				$shortestWord=0;
 
-				if(strlen($array[0]) <= strlen($array[1]) && strlen($array[0]) <= strlen($array[2]) && strlen($array[0]) <= strlen($array[3])){
-					echo $array[0];
+				foreach ($array as $word) {
+   					if (strlen($word) < $Length) {
+     					 $Length = strlen($word);
+     			 		 $shortestWord = $word;
+  				 }
 				}
-				else if(strlen($array[1]) <= strlen($array[0]) && strlen($array[1]) <= strlen($array[2]) && strlen($array[1]) <= strlen($array[3])){
-					echo $array[1];
-				}
-				else if(strlen($array[2]) <= strlen($array[0]) && strlen($array[2]) <= strlen($array[1]) && strlen($array[2]) <= strlen($array[3])){
-					echo $array[2];
-				}
-				else{
-					echo $array[3];
-				}
+				echo $shortestWord;
 
 			}
 
