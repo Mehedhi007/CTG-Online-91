@@ -31,9 +31,10 @@
 
 			public function wordLength(){
 
-				$Length = 100;
+				
 				$array = explode(' ',$this->sentence);
-				$shortestWord=0;
+				$Length = strlen($array[0]);
+				$shortestWord=NULL;
 
 				foreach ($array as $word) {
    					if (strlen($word) < $Length) {
